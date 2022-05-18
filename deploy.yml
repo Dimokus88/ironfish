@@ -5,12 +5,12 @@ services:
   app:
     image: dimokus88/ironfish:0.0.4
     env:
-     - "my_root_password=310888" 
-     #- "account_name=" 
-     - "LINK_WALLET=https://drive.google.com/uc?export=download&id=18N7rUWt3sEBRcXecCxRHxHfcTPhx6P1c"
-     - "NODE_NAME=DimokusAkashNetwork"
-     - "Graffiti=Dimokus"
-     - "EMAIL=dimokus@mail.ru" 
+     - "my_root_password=pass_root_for_ssh" 
+     #- "account_name=Your_acc_name" 
+     №- "LINK_WALLET="
+     - "NODE_NAME="
+     - "Graffiti="
+     - "EMAIL=" 
      - "POOL=pool.ironfish.network" 
      
     
