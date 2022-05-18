@@ -38,7 +38,7 @@ ___
 
 * Нажимаем ***CREATE DEPLOYMENT***. Выбираем ***Empty***(пустой template) и копируем туда содержимое [deploy.yml](https://github.com/Dimokus88/ironfish/blob/main/deploy.yml) .
 
-## 2.1 Если разворачиваете ноду первый раз и у вас нет wallet.json
+## 2.1 Если разворачиваете ноду первый раз и у вас нет ```wallet.json```:
 
 а) Заполняете следующие переменные:
 * ```my_root_password``` - пароль ```root``` пользователя, для подключения к контейнеру по ```ssh```.
@@ -79,7 +79,7 @@ ___
 
 ж) Измените манифест во вкладке ***UPDATE*** по примеру из п.2.2 (см ниже) и нажмите ***UPDATE DEPLOYMENT***
 
-## 2.2 Если у вас уже есть wallet.json
+## 2.2 Если у вас уже есть ```wallet.json```:
 >Сохраните файл ```wallet.json``` на Google диске и откройте доступ к файлу, скопируйте его ссылку, она будет вида:
 ```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
  вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```. 
