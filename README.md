@@ -105,8 +105,9 @@ ___
 ![image](https://user-images.githubusercontent.com/23629420/169114122-24e056ac-c11b-4e9e-ae7b-d26bc06863b3.png)
 
 После синхронизации начнется процесс майнинга. Так же, каждые 5 минут будет отправляться транзакция ```0,1 IRON``` в общий банк, за которую будут начислятся баллы в рейтинге.
+
 [Explorer IronFish](https://explorer.ironfish.network/)
 
-# Спасибо что используете Akash Network!
+## Спасибо что используете Akash Network!
 ___
 # English-version
