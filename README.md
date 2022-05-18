@@ -59,20 +59,15 @@ ___
 
 б )Перейдите во вкладку ***LOGS->LOGS***
 
-в) Дождитесь создания ***wallet.json***, появится соответствующее сообщение (около минут 8 от запуска контейнера).
+в) Дождитесь создания ```wallet.json```, появится соответствующее сообщение (около минут 8 от запуска контейнера).
 ![image](https://user-images.githubusercontent.com/23629420/169107125-4e30453a-3666-4b1c-bdd7-93e552075b9e.png)
 
 
-г) Скопируйте ссылку (***Uris***)на развертывание во вкладке ***LEASES***  и в конце ссылки добавьте ```/wallet.json``` после чего перейдите по ссылке. (пример ссылки ```http://mcbp2gf6g9ad77vvapnblq3n6k.palmito.duckdns.org/wallet.json```)
+г)Перейдите во вкладку ***SHELL*** и введите ```cat wallet.json```. Скопируйте весь ответ в текстовый файл и сохраните его как ```wallet.json```.
 
-![image](https://user-images.githubusercontent.com/23629420/169107182-ad51d375-b171-4195-8538-313bbe6549f0.png)
+![image](https://user-images.githubusercontent.com/23629420/169136066-18898162-42dc-41f0-92ff-ae797562be02.png)
 
-д) Скопируйте вывод из браузера в файл ```wallet.json``` с помощью любого текстового редактора.
-
-![image](https://user-images.githubusercontent.com/23629420/169107385-2ab958d0-5789-4202-af64-1deac1b599a5.png)
-
-
-е) Сохраните файл ***wallet.json*** на Google диске и откройте доступ к файлу, скопируйте его ссылку, она будет вида:
+д) Разместите файл ```wallet.json``` на Google диске и откройте доступ к файлу, скопируйте его ссылку, она будет вида:
 
 ```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
 
@@ -85,7 +80,7 @@ ___
 ж) Измените манифест во вкладке ***UPDATE*** по примеру из п.2.2 (см ниже) и нажмите ***UPDATE DEPLOYMENT***
 
 ## 2.2 Если у вас уже есть wallet.json
->Сохраните файл ***wallet.json*** на Google диске и откройте доступ к файлу, скопируйте его ссылку, она будет вида:
+>Сохраните файл ```wallet.json``` на Google диске и откройте доступ к файлу, скопируйте его ссылку, она будет вида:
 ```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
  вам нужно взять часть: ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` и вставить перед ней: ```https://drive.google.com/uc?export=download&```. 
 Таким образом, у вас получится ссылка на прямое скачивание файла:
