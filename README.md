@@ -1,4 +1,4 @@
-# Deployment Ironfish on Akash Network 
+# Deploy Ironfish on Akash Network 
 # Развертка Ironfish в Akash Network 
 <div align="center">
 
