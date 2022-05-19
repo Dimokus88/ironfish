@@ -22,6 +22,89 @@ Before you start - subscribe to our news channels:
 </div>
 
 ___
+# English-version
+## 1. Registration in the rewards program.
+ Go to site IronFish and [create account](https://testnet.ironfish.network/signup). Write your ```Email```, ```Github```, ```Discord``` or ```Telegram``` and country. And write your ```Graffiti``` it is needed for identification in the network and accrual of points for tasks.
+![image](https://user-images.githubusercontent.com/23629420/169029990-ae514caa-2ded-4b99-85d2-0a901bde75e3.png)
+## 2. Deploy Ironfish
+
+>You must have more than ***5 AKT*** on your Akash wallet (5 АКТ will be blocked for deployment + transaction gas payment). АКТ can be found on the exchanges Gate, AsendeX, Osmosis . Also in our community[Akash RU](https://t.me/akash_ru) we regularly hold events in which we distribute АКТ.
+
+* Open ***Akashlytics***,if you don't have it installed, then [link for download](https://www.akashlytics.com/deploy).
+
+* We check the presence of a balance  ***(>5АКТ)*** and the presence of an installed certificate.
+
+![image](https://user-images.githubusercontent.com/23629420/165339432-6f053e43-4fa2-4429-8eb7-d2fc66f47c70.png)
+
+* Click ***CREATE DEPLOYMENT***. Select ***Empty*** and copy the contents there [deploy.yml](https://github.com/Dimokus88/ironfish/blob/main/deploy.yml) .
+
+## 2.1 If you are deploy a node for the first time and you do not have ```wallet.json```:
+
+a) Fill in the following variables:
+* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
+* ```account_name```     - Account name(walllet),since the node is running***first time***.
+* ```NODE_NAME```        - Node name (moniker).
+* ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
+* ```EMAIL```            - ```Email``` from registration on the site IronFish.
+* ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
+> ```LINK_WALLET```      - put # at the beginning of the line.
+
+Below, in the ```resources``` field, we set the capacity to be rented. Recommended for IronFish node```4 CPU x 8 GB RAM x 10 GB SSD```.
+
+Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS)..
+
+![image](https://user-images.githubusercontent.com/23629420/165608527-da85c84e-edcc-4b15-8843-441d3e76dcb6.png)
+
+We choose the one that suits us in terms of price and equipment. Then we press ```ACCEPT BID```.
+
+b ) Go to tab ***LOGS->LOGS***
+
+c) Wait create ```wallet.json```, a view message will appear (about 8 minutes from the start of the container).
+![image](https://user-images.githubusercontent.com/23629420/169107125-4e30453a-3666-4b1c-bdd7-93e552075b9e.png)
+
+
+d)Go to tab ***SHELL*** и введите ```cat wallet.json```.Copy full answer and save as ```wallet.json```.
+
+![image](https://user-images.githubusercontent.com/23629420/169136066-18898162-42dc-41f0-92ff-ae797562be02.png)
+
+f) Place file ```wallet.json```in google drive,and open access to the file on google drive and copy its link, it will look like:
+
+```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
+
+ you need to take a part:  ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```.
+ 
+Thus, you will get a link to a direct download of the file:
+
+```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
+
+g) Change the manifest in the tab ***UPDATE***  following the example from p.2.2 (see below) and click ***UPDATE DEPLOYMENT***
+
+## 2.2 If you already have ```wallet.json```:
+>Place file ```wallet.json```in google drive,and open access to the file on google drive and copy its link, it will look like:
+```https://drive.google.com/open?id=xxxxxxxxxxxxxx-xxxxxxxxxxxx&authuser=gmail%40gmail.com&usp=drive_fs```
+ you need to take a part:  ```id=xxxxxxxxxxxxxx-xxxxxxxxxxxx``` and put in front of it: ```https://drive.google.com/uc?export=download&```. 
+Thus, you will get a link to a direct download of the file:
+```https://drive.google.com/uc?export=download&id=xxxxxxxxxxxxxx-xxxxxxxxxxxx```
+
+Fill in the following variables:
+* ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
+* ```LINK_WALLET```      - link of download your ```wallet.json```.
+* ```NODE_NAME```        - Node name (moniker).
+* ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
+* ```EMAIL```            - ```Email``` from registration on the site IronFish.
+* ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
+> ```account_name```     - put # at the beginning of the line.
+
+Run the deployment, the node will start syncing automatically. Example log output:
+
+![image](https://user-images.githubusercontent.com/23629420/169114122-24e056ac-c11b-4e9e-ae7b-d26bc06863b3.png)
+
+After synchronization, the mining process will begin. Also, every 5 minutes a transaction ```0.1 IRON``` will be sent to the general bank, for which points in the rating will be awarded.
+
+[Explorer IronFish](https://explorer.ironfish.network/)
+
+## Thank you for choosing Akash Network!
+___
 # Русская версия
 ## 1. Регистрация в программе вознаграждений.
  Преходим на сайт проекта и[ создаем учетную запись ](https://testnet.ironfish.network/signup) Укажите ваш ```Email```, ```Github```, ```Discord``` или ```Telegram```, страну проживания. Также укажите ваш ```Graffiti``` он будет необходим для индетификации в сети и начисления баллов за задания. 
@@ -104,5 +187,3 @@ ___
 [Explorer IronFish](https://explorer.ironfish.network/)
 
 ## Спасибо что используете Akash Network!
-___
-# English-version
