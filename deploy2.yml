@@ -5,11 +5,11 @@ services:
   app:
     image: dimokus88/ironfish:0.2.3
     env:
-      - "my_root_password=310888" 
-      - "LINK_WALLET=https://drive.google.com/uc?export=download&id=18N7rUWt3sEBRcXecCxRHxHfcTPhx6P1c"
-      - "NODE_NAME=DimokusAkashNetwork"
-      - "Graffiti=Dimokus"
-      - "EMAIL=dimokus@mail.ru" 
+      - "my_root_password=" 
+      - "LINK_WALLET="
+      - "NODE_NAME="
+      - "Graffiti="
+      - "EMAIL=" 
       - "POOL=pool.ironfish.network" 
       - "LINK_SNAPSHOT=http://p7egqbi5ah8u36d94661kutalg.ingress.bigtractorplotting.com/databases.zip" 
      
