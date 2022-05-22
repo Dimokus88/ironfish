@@ -9,7 +9,6 @@ services:
      #- "LINK_WALLET=https://drive.google.com/uc?export=download&" # Прямая ссылка на скачивание вашего wallet.json . Если используете эту переменную поставьте "#" перед account_name
      - "NODE_NAME=" # Имя ноды
      - "Graffiti=" # Граффити из личного кабинета https://testnet.ironfish.network/
-     - "EMAIL=" # почтовый адрес, на который зарегистрирован личный кабинет https://testnet.ironfish.network/
      - "POOL=pool.ironfish.network" # майнинговый пул ironfish
      - "LINK_SNAPSHOT=mc5vlo5kope7f2s229ite41qek.ingress.provider-0.prod.ams1.akash.pub/databases.zip" 
     
