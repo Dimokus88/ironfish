@@ -47,7 +47,7 @@ a) Fill in the following variables:
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
 > ```LINK_WALLET```      - put # at the beginning of the line.
 
-Below, in the ```resources``` field, we set the capacity to be rented. Recommended for IronFish node```4 CPU x 8 GB RAM x 10 GB SSD```.
+Below, in the ```resources``` field, we set the capacity to be rented. Recommended for IronFish node```6 CPU x 8 GB RAM x 15 GB SSD```.
 
 Click on ```CREATE DEPLOYMENT``` and we are waiting for the appearance of providers with free capacities (BIDS)..
 
@@ -95,7 +95,7 @@ Run the deployment, the node will start syncing automatically. Example log outpu
 
 ![image](https://user-images.githubusercontent.com/23629420/169114122-24e056ac-c11b-4e9e-ae7b-d26bc06863b3.png)
 
-After synchronization, the mining process will begin. Also, every 5 minutes a transaction ```0.1 IRON``` will be sent to the general bank, for which points in the rating will be awarded.
+After synchronization, the mining process will begin. Also, every 15 minutes a transaction ```0.1 IRON``` will be sent to the general bank, for which points in the rating will be awarded.
 
 [Explorer IronFish](https://explorer.ironfish.network/)
 
@@ -126,7 +126,7 @@ ___
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
 > ```LINK_WALLET```      - закомментируйте, поставив # в начале строки.
 
-Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды IronFish рекомендуется ```4 CPU x 8 GB RAM x 10 GB SSD```.
+Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды IronFish рекомендуется ```6 CPU x 8 GB RAM x 15 GB SSD```.
 
 Нажимаем кнопку ```CREATE DEPLOYMENT``` и ждем появления провайдеров, со свободными мощностями (BIDS).
 
@@ -174,7 +174,7 @@ ___
 
 ![image](https://user-images.githubusercontent.com/23629420/169114122-24e056ac-c11b-4e9e-ae7b-d26bc06863b3.png)
 
-После синхронизации начнется процесс майнинга. Так же, каждые 5 минут будет отправляться транзакция ```0,1 IRON``` в общий банк, за которую будут начислятся баллы в рейтинге.
+После синхронизации начнется процесс майнинга. Так же, каждые 15 минут будет отправляться транзакция ```0,1 IRON``` в общий банк, за которую будут начислятся баллы в рейтинге.
 
 [Explorer IronFish](https://explorer.ironfish.network/)
 
