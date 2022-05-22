@@ -140,7 +140,7 @@ ___
 ![image](https://user-images.githubusercontent.com/23629420/169107125-4e30453a-3666-4b1c-bdd7-93e552075b9e.png)
 
 
-г)Перейдите во вкладку ***SHELL*** и введите ```cat wallet.json```. Скопируйте весь ответ в текстовый файл и сохраните его как ```wallet.json```.
+г)Перейдите во вкладку ***SHELL*** и введите ```cat /root/.ironfish/wallet.json```. Скопируйте весь ответ в текстовый файл и сохраните его как ```wallet.json```.
 
 ![image](https://user-images.githubusercontent.com/23629420/169136066-18898162-42dc-41f0-92ff-ae797562be02.png)
 
