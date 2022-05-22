@@ -61,7 +61,7 @@ c) Wait create ```wallet.json```, a view message will appear (about 8 minutes fr
 ![image](https://user-images.githubusercontent.com/23629420/169107125-4e30453a-3666-4b1c-bdd7-93e552075b9e.png)
 
 
-d)Go to tab ***SHELL*** and type ```cat wallet.json```.Copy full answer and save as ```wallet.json```.
+d)Go to tab ***SHELL*** and type ```cat /root/.ironfish/wallet.json```.Copy full answer and save as ```wallet.json```.
 
 ![image](https://user-images.githubusercontent.com/23629420/169136066-18898162-42dc-41f0-92ff-ae797562be02.png)
 
