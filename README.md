@@ -42,7 +42,6 @@ ___
 
 a) Fill in the following variables:
 * ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
-* ```account_name```     - Account name(walllet),since the node is running***first time***.
 * ```NODE_NAME```        - Node name (moniker).
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
 * ```EMAIL```            - ```Email``` from registration on the site IronFish.
@@ -93,7 +92,6 @@ Fill in the following variables:
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
 * ```EMAIL```            - ```Email``` from registration on the site IronFish.
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
-> ```account_name```     - put # at the beginning of the line.
 
 Run the deployment, the node will start syncing automatically. Example log output:
 
@@ -125,7 +123,6 @@ ___
 
 а) Заполняете следующие переменные:
 * ```my_root_password``` - пароль ```root``` пользователя, для подключения к контейнеру по ```ssh```.
-* ```account_name```     - Имя аккаунта(кошелька),так как нода запускается ***первый раз***.
 * ```NODE_NAME```        - имя ноды.
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (***ВНИМАНИЕ! Чувствительно к регистру!!!***)
 * ```EMAIL```            - ```Email``` на который зарегистрировались на сайте IronFish.
@@ -176,7 +173,6 @@ ___
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (ВНИМАНИЕ! Чувствительно к регистру!!!
 * ```EMAIL```            - ```Email``` на который зарегистрировались на сайте IronFish
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
-> ```account_name```     - закомментируйте, поставив # в начале строки.
 
 Запустите развертывание, нода начнет синхронизацию автоматически.Пример вывода в логах: 
 
