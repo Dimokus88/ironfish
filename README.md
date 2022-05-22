@@ -44,7 +44,6 @@ a) Fill in the following variables:
 * ```my_root_password``` - password  ```root``` user, for connection to container via ```ssh```.
 * ```NODE_NAME```        - Node name (moniker).
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
-* ```EMAIL```            - ```Email``` from registration on the site IronFish.
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
 > ```LINK_WALLET```      - put # at the beginning of the line.
 
@@ -90,7 +89,6 @@ Fill in the following variables:
 * ```LINK_WALLET```      - link of download your ```wallet.json```.
 * ```NODE_NAME```        - Node name (moniker).
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
-* ```EMAIL```            - ```Email``` from registration on the site IronFish.
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
 
 Run the deployment, the node will start syncing automatically. Example log output:
@@ -125,7 +123,6 @@ ___
 * ```my_root_password``` - пароль ```root``` пользователя, для подключения к контейнеру по ```ssh```.
 * ```NODE_NAME```        - имя ноды.
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (***ВНИМАНИЕ! Чувствительно к регистру!!!***)
-* ```EMAIL```            - ```Email``` на который зарегистрировались на сайте IronFish.
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
 > ```LINK_WALLET```      - закомментируйте, поставив # в начале строки.
 
@@ -171,7 +168,6 @@ ___
 * ```LINK_WALLET```      - адрес скачивания вашего ```wallet.json```.
 * ```NODE_NAME```        - имя ноды.
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (ВНИМАНИЕ! Чувствительно к регистру!!!
-* ```EMAIL```            - ```Email``` на который зарегистрировались на сайте IronFish
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
 
 Запустите развертывание, нода начнет синхронизацию автоматически.Пример вывода в логах: 
