@@ -22,6 +22,10 @@ services:
         as: 22
         to:
           - global: true
+      - port: 9033
+        as: 9033
+        to:
+          - global: true
    
     
 profiles:
