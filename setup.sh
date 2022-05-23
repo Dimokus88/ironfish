@@ -5,23 +5,36 @@
 #========https://t.me/Dimokus========
 #====================================
 echo 'export my_root_password='${my_root_password}  >> $HOME/.bashrc
-echo 'account_name='${account_name}  >> $HOME/.bashrc
 echo 'export Graffiti='${Graffiti} >>  $HOME/.bashrc
 echo 'NODE_NAME='${NODE_NAME}  >> $HOME/.bashrc
-echo 'EMAIL='${EMAIL}  >> $HOME/.bashrc
 echo 'POOL='${POOL}  >> $HOME/.bashrc
+echo 'export THREADS='${THREADS} >>  $HOME/.bashrc
 echo 'export LINK_WALLET='${LINK_WALLET} >>  $HOME/.bashrc
+echo 'export LINK_SNAPSHOT='${LINK_SNAPSHOT} >>  $HOME/.bashrc
+
 
 source $HOME/.bashrc
 cd /
 wget -O wallet.json ${LINK_WALLET}
+wget -O databases.zip ${LINK_SNAPSHOT}
+unzip -u databases.zip
+rm /root/.ironfish/config.json
+rm /root/.ironfish/internal.json
+rm /root/.ironfish/hosts.json
+rm databases.zip
+mv wallet.json /root/.ironfish/
+
+
+cd /
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 (echo ${my_root_password}; echo ${my_root_password}) | passwd root
 sleep 15
 
-
 service ssh restart
-service nginx start
+
+echo ================================
+echo ===Установка nvm. Install nvm===
+echo ================================
 cd ~/
 git clone https://github.com/nvm-sh/nvm.git .nvm
 cd ~/.nvm
@@ -33,6 +46,9 @@ export NVM_DIR="$HOME/.nvm"
 . ./nvm.sh
 source $HOME/.bashrc
 
+echo ======================================
+echo ===Установка nodejs. Install nodejs===
+echo ======================================
 cd ~
 curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh -y
@@ -45,60 +61,93 @@ cd /usr/app
 sudo npm install -g ironfish --unsafe-perm
 source $HOME/.bashrc
 cd /
-echo запускаем =====================
-if  [[ -z "${LINK_WALLET}" ]]
+
+if  [[ -e /root/.ironfish/wallet.json ]]
 then
-	echo файл кошелька не обнаружен! Создаю новый. Незабудьте сохранить его копию!
-	sleep 10
-	(echo "${account_name}") | sudo ironfish accounts:create
-	echo `sudo ironfish accounts:export ${account_name}` >> wallet.json
-	cp ./wallet.json /var/www/html/
-	sudo ironfish accounts:use ${account_name}
-	echo Кошелек создан! Сохраните его копию!
-	cat wallet.json
-	echo Запрос токенов из крана
-	(echo ${EMAIL}) | sudo ironfish faucet
-	sleep 1m
-else
-	echo Обнаружен файл кошелька
-	cat wallet.json
+	echo ========================================================
+	echo ===Обнаружен файл wallet.json!. wallet.json is found!===
+	echo ========================================================
+	cat /root/.ironfish/wallet.json
 	sleep 20
-	account_name=`cat wallet.json | jq -r '.name'`
-	echo Имя аккаунта ${account_name}
-	sudo ironfish accounts:import wallet.json
-	sudo ironfish accounts:use ${account_name}
-	echo Запрос токенов из крана
-	(echo ${EMAIL}) | sudo ironfish faucet
-	
-	
+	account_name=`cat /root/.ironfish/wallet.json | jq -r '.name'`
+	echo Имя аккаунта ${account_name} 
+	sudo ironfish accounts:import /root/.ironfish/wallet.json 
+	sudo ironfish accounts:use ${account_name} 
+else
+	echo ================================================================================================================================
+	echo ===wallet.json не обнаружен! Создаю новый. Сохраните его копию!. Wallet file not found! Creating a new one. Save wallet.json!===
+	echo ================================================================================================================================
+	sleep 10
+	(echo "${Graffiti}") | sudo ironfish accounts:create
+	echo `sudo ironfish accounts:export ${Graffiti}` >> /root/.ironfish/wallet.json
+	sudo ironfish accounts:use ${Graffiti}
+	echo ====================================================================================
+	echo ===wallet.json создан!Сохраните его копию!. wallet.json create! Save wallet.json!===
+	echo ====================================================================================
+	cat /root/.ironfish/wallet.json
+	sleep 1m
 fi
-PUBLIC_KEY=`cat wallet.json | jq -r '.publicAddress'`
+PUBLIC_KEY=`cat /root/.ironfish/wallet.json | jq -r '.publicAddress'`
 echo $PUBLIC_KEY
-sudo ironfish config:set enableTelemetry true
+sudo ironfish config:set enableTelemetry true 
 sudo ironfish config:set blockGraffiti "${Graffiti}"
 echo ===========
 sleep 10
-echo Запуск ноды
-nohup  sudo ironfish start --name ${NODE_NAME}  >node.out 2>node.err </dev/null &
+echo ==============================
+echo ===Запуск ноды. Start node.===
+echo ==============================
+nohup  sudo ironfish start --name ${NODE_NAME} >node.out 2>node.err </dev/null & nodepid=`echo $!`
 sleep 15
-echo Запуск майнера
-nohup  sudo ironfish miners:start --pool ${POOL} --address ${PUBLIC_KEY} >miner.out 2>miner.err </dev/null &
+echo ==================================
+echo ===Запуск майнера. Start miner.===
+echo ==================================
+nohup  sudo ironfish miners:start -t ${THREADS} --pool ${POOL} --address ${PUBLIC_KEY} > /dev/null & minerpid=`echo $!`
 sleep 15
-
+echo nodepid ${nodepid}
+echo minerpid ${minerpid}
+sleep 15
 for ((;;))
 do
-tail ./node.err
-tail ./node.out
-sleep 1m
-tail ./miner.err
-tail ./miner.out
-sleep 1m
+echo ===============================
+echo ===Статус ноды. Node status.===
+echo ===============================
+date
 sudo ironfish status
-sleep 1m
-echo Проверка баланса 
+echo $PUBLIC_KEY
+sleep 15m
+echo =========================================
+echo ===Проверка баланса. Checking balance.===
+echo =========================================
 sudo ironfish deposit
 sudo ironfish accounts:balance
 echo =================
+	if [[ -z `ps -o pid= -p $nodepid` ]]
+	then
+		echo ===================================================================
+		echo ===Нода не работает, перезапускаю...Node not working, restart...===
+		echo ===================================================================
+		nohup  sudo ironfish start --name ${NODE_NAME}  >node.out 2>node.err </dev/null & nodepid=`echo $!`
+	else
+		echo =================================
+		echo ===Нода работает.Node working.===
+		echo =================================
+	fi
+	
+	if [[ -z `ps -o pid= -p $minerpid` ]]
+	then
+		echo ======================================================================
+		echo ===Майнер не работает, перезапускаю...Miner not working, restart...===
+		echo ======================================================================
+		nohup  sudo ironfish miners:start -t ${THREADS} --pool ${POOL} --address ${PUBLIC_KEY} > /dev/null & minerpid=`echo $!`
+	else 
+		echo ====================================
+		echo ===Майнер работает.Miner working.===
+		echo ====================================
+	fi
+	
+echo nodepid ${nodepid}
+echo minerpid ${minerpid}
+
 sleep 10
 done
 sleep infinity
