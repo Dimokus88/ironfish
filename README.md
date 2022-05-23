@@ -45,6 +45,7 @@ a) Fill in the following variables:
 * ```NODE_NAME```        - Node name (moniker).
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
+* ```THREADS```          - set max cpu for mining using the formula [number of leased cpu] - [1] = THREADS .
 > ```LINK_WALLET```      - put # at the beginning of the line.
 
 Below, in the ```resources``` field, we set the capacity to be rented. Recommended for IronFish node```6 CPU x 8 GB RAM x 15 GB SSD```.
@@ -89,6 +90,7 @@ Fill in the following variables:
 * ```LINK_WALLET```      - link of download your ```wallet.json```.
 * ```NODE_NAME```        - Node name (moniker).
 * ```Graffiti```         - Your ```Graffiti``` from registration on the site IronFish (***ATTENTION! Case sensitive!!!***)
+* ```THREADS```          - set max cpu for mining using the formula [number of leased cpu] - [1] = THREADS .
 * ```POOL```             - mining pool. You can leave it as default, delete if you want to mine yourself or enter the address of your mining pool.
 
 Run the deployment, the node will start syncing automatically. Example log output:
@@ -124,6 +126,7 @@ ___
 * ```NODE_NAME```        - имя ноды.
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (***ВНИМАНИЕ! Чувствительно к регистру!!!***)
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
+* ```THREADS```          - установите max cpu для майнинга по формуле [количество арендованных cpu] - [1] = THREADS
 > ```LINK_WALLET```      - закомментируйте, поставив # в начале строки.
 
 Ниже, в поле ```resources``` мы выставляем арендуюмую мощность. для ноды IronFish рекомендуется ```6 CPU x 8 GB RAM x 15 GB SSD```.
@@ -169,6 +172,7 @@ ___
 * ```NODE_NAME```        - имя ноды.
 * ```Graffiti```         - Ваше ```Graffiti``` из регистрации на сайте IronFish (ВНИМАНИЕ! Чувствительно к регистру!!!
 * ```POOL```             - майнинговый пул. Можете оставить по-умолчанию, удалить если хотите майнить самостоятельно или введите адрес вашего майнингово пула.
+*  ```THREADS```          - установите max cpu для майнинга по формуле [количество арендованных cpu] - [1] = THREADS
 
 Запустите развертывание, нода начнет синхронизацию автоматически.Пример вывода в логах: 
 
