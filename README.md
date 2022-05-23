@@ -101,6 +101,24 @@ After synchronization, the mining process will begin. Also, every 15 minutes a t
 
 [Explorer IronFish](https://explorer.ironfish.network/)
 
+# Useful commands
+
+In the ```SHELL``` tab you can use the following commands:
+
+```ironfish accounts:balance```                                                  - balance check
+
+```ironfish accounts:publickey```                                                - show your public key
+
+```ironfish status```                                                            - node status
+
+```ironfish config:show```                                                       - show configuration
+
+```ironfish chain:forks```                                                       - network fork check (should be 0)
+
+```ironfish accounts:pay -a 2 -o 0.00000001 -t 997c...7fc52ed -f Savings```     - Send 2 coins from an account named "Savings"
+
+You can read more about IronFish commands on the [official website](https://ironfish.network/docs/onboarding/iron-fish-cli).
+
 ## Thank you for choosing Akash Network!
 ___
 # Русская версия
@@ -181,5 +199,23 @@ ___
 После синхронизации начнется процесс майнинга. Так же, каждые 15 минут будет отправляться транзакция ```0,1 IRON``` в общий банк, за которую будут начислятся баллы в рейтинге.
 
 [Explorer IronFish](https://explorer.ironfish.network/)
+
+# Полезные команды
+
+Во вкладке ```SHELL``` вы можете воспользоваться следующими командами:
+
+```ironfish accounts:balance```                                                - проверка баланса
+
+```ironfish accounts:publickey```                                              - показать ваш публичный адрес
+
+```ironfish status```                                                          - статус ноды
+
+```ironfish config:show```                                                     - просмотр конфигурации
+
+```ironfish chain:forks```                                                     - проверка форка сети (должно быть значение 0)
+
+```ironfish accounts:pay -a 2 -o 0.00000001 -t 997c...7fc52ed -f Savings```    - Отправка 2-х монет с аккаунта под именем "Savings"
+
+Более подробно о командах IronFish можно прочитать на [официальном сайте](https://ironfish.network/docs/onboarding/iron-fish-cli).
 
 ## Спасибо что используете Akash Network!
