@@ -9,7 +9,7 @@ services:
      #- "LINK_WALLET=https://drive.google.com/uc?export=download&" # Direct link to download your wallet.json .Прямая ссылка на скачивание вашего wallet.json .
      - "NODE_NAME=" # Имя ноды. Node name.
      - "Graffiti=" # Graffiti from personal https://testnet.ironfish.network/ . account Граффити из личного кабинета https://testnet.ironfish.network/
-     - "POOL=pool.ironfish.network" # pool ironfish . майнинговый пул ironfish
+     - "POOL=pool.ironfish.host" # pool ironfish . майнинговый пул ironfish
      - "THREADS=THREADS" # set max cpu for mining using the formula [number of leased cpu] - [1] = THREADS . установите max cpu для майнинга по формуле [количество арендованных cpu] - [1] = THREADS
      - "LINK_SNAPSHOT=mc5vlo5kope7f2s229ite41qek.ingress.provider-0.prod.ams1.akash.pub/databases.zip" 
     
